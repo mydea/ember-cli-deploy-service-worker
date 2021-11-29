@@ -5,6 +5,9 @@
 # compiled output
 /dist/
 /tmp/
+/node-tests/fixtures/
+/node-tests/tmp/
+public/
 
 # dependencies
 /bower_components/
