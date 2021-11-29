@@ -53,7 +53,7 @@ let ENV = {
 
 ### Notes on development
 
-This addon will always register a service worker at `./sw.js`.
+This addon will register a service worker when in production environment at `./sw.js`.
 However, by default this is an empty file that does nothing.
 The placeholder `sw.js` file is generated when you run `ember install ember-cli-deploy-service-worker`,
 alternatively you can also generate it via `ember g ember-cli-deploy-service-worker`.
