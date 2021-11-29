@@ -12,12 +12,19 @@ module.exports = {
     let DeployPlugin = BasePlugin.extend({
       name: options.name,
       runAfter: 'build',
+      runBefore: ['gzip', 'manifest'],
 
       defaultConfig: {
         filePattern: '**/*.{js,css,jpg,png,svg,gif}',
         ignorePattern: undefined,
         version: '1',
         prepend: undefined,
+        distDir(context) {
+          return context.distDir;
+        },
+        distFiles(context) {
+          return context.distFiles;
+        },
       },
 
       async didBuild(context) {
@@ -25,7 +32,8 @@ module.exports = {
         let ignorePattern = this.readConfig('ignorePattern');
         let version = this.readConfig('version');
         let prepend = this.readConfig('prepend');
-        let { distDir, distFiles } = context;
+        let distDir = this.readConfig('distDir');
+        let distFiles = this.readConfig('distFiles');
 
         if (!distDir) {
           throw new Error(
@@ -47,7 +55,10 @@ module.exports = {
           prepend,
         });
 
-        distFiles.push(swFilePath);
+        if (!distFiles.includes(swFilePath)) {
+          distFiles.push(swFilePath);
+          context.distFiles = distFiles;
+        }
       },
     });
 
