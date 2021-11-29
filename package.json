@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-service-worker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate a sw.js file to cache assets at build/deploy time.",
   "keywords": [
     "ember-addon",
