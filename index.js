@@ -62,7 +62,7 @@ module.exports = {
 
   contentFor(type, config) {
     if (
-      config.environment !== 'test' &&
+      config.environment === 'production' &&
       type === 'body-footer' &&
       !config._serviceWorkerRegistrationInjected
     ) {
