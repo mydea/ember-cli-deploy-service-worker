@@ -51,6 +51,8 @@ describe('service-worker', function () {
         config: {
           'service-worker': {},
         },
+        distDir: 'test-dist-dir',
+        distFiles: ['test-file'],
       };
 
       await plugin.beforeHook(context);
@@ -59,12 +61,23 @@ describe('service-worker', function () {
 
       await plugin.configure(context);
 
-      assert.deepEqual(context.config['service-worker'], {
-        filePattern: '**/*.{js,css,jpg,png,svg,gif}',
-        ignorePattern: undefined,
-        version: '1',
-        prepend: undefined,
-      });
+      assert.strictEqual(
+        context.config['service-worker'].filePattern,
+        '**/*.{js,css,jpg,png,svg,gif}'
+      );
+      assert.strictEqual(
+        context.config['service-worker'].ignorePattern,
+        undefined
+      );
+      assert.strictEqual(context.config['service-worker'].prepend, undefined);
+      assert.strictEqual(context.config['service-worker'].version, '1');
+      assert.strictEqual(
+        context.config['service-worker'].distDir(context),
+        'test-dist-dir'
+      );
+      assert.deepEqual(context.config['service-worker'].distFiles(context), [
+        'test-file',
+      ]);
     });
   });
 
@@ -87,9 +100,9 @@ describe('service-worker', function () {
             filePattern: '**/*.{js,css,jpg,png,svg,gif}',
             ignorePattern: undefined,
             version: '1',
+            distFiles: [],
           },
         },
-        distFiles: [],
       };
 
       await plugin.beforeHook(context);
@@ -116,9 +129,9 @@ describe('service-worker', function () {
             filePattern: '**/*.{js,css,jpg,png,svg,gif}',
             ignorePattern: undefined,
             version: '1',
+            distDir: 'node-tests/tmp',
           },
         },
-        distDir: 'node-tests/tmp',
       };
 
       await plugin.beforeHook(context);
@@ -153,6 +166,7 @@ describe('service-worker', function () {
       };
 
       await plugin.beforeHook(context);
+      await plugin.configure(context);
       await plugin.didBuild(context);
 
       assert.strictEqual(
@@ -212,6 +226,7 @@ describe('service-worker', function () {
       };
 
       await plugin.beforeHook(context);
+      await plugin.configure(context);
       await plugin.didBuild(context);
 
       assert.ok(fs.existsSync('node-tests/tmp/sw.js'));
@@ -254,6 +269,7 @@ describe('service-worker', function () {
       };
 
       await plugin.beforeHook(context);
+      await plugin.configure(context);
       await plugin.didBuild(context);
 
       assert.strictEqual(
