@@ -5416,10 +5416,10 @@ eslint-plugin-qunit@^7.0.0:
     eslint-utils "^3.0.0"
     requireindex "^1.2.0"
 
-eslint-plugin-unused-imports@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-1.1.5.tgz#a2b992ef0faf6c6c75c3815cc47bde76739513c2"
-  integrity sha512-TeV8l8zkLQrq9LBeYFCQmYVIXMjfHgdRQLw7dEZp4ZB3PeR10Y5Uif11heCsHRmhdRIYMoewr1d9ouUHLbLHew==
+eslint-plugin-unused-imports@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-2.0.0.tgz#d8db8c4d0cfa0637a8b51ce3fd7d1b6bc3f08520"
+  integrity sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==
   dependencies:
     eslint-rule-composer "^0.3.0"
 
@@ -5773,10 +5773,10 @@ extract-stack@^2.0.0:
   resolved "https://registry.yarnpkg.com/extract-stack/-/extract-stack-2.0.0.tgz#11367bc865bfcd9bc0db3123e5edb57786f11f9b"
   integrity sha512-AEo4zm+TenK7zQorGK1f9mJ8L14hnTDi2ZQPR+Mub1NX8zimka1mXpV5LpH8x9HoUmFSHZCfLHqWvp0Y4FxxzQ==
 
-fabscale-eslint-config@~1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/fabscale-eslint-config/-/fabscale-eslint-config-1.1.1.tgz#446c052480f82ae24e035aeb5949e9b006d14e28"
-  integrity sha512-SfsKqtKkB/WFhSvLXoGzDz6MZ1qfiO+o4R1Vce3jvm+w//3fLFkO/vRVDQa5kZmKrwx29Dh3YLu5XD44IrSoFg==
+fabscale-eslint-config@~1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/fabscale-eslint-config/-/fabscale-eslint-config-1.4.0.tgz#7c59c9b044868b543121ec4f281f004d11bbc1b7"
+  integrity sha512-yJ4ETUrUYo9uCHTb5CVcSU5VKfdexRZoESrAxHHUbh/ylRmS5mNVExJ3qzQaCV//t9+Bjs18Mi6hakf1juH8UA==
   dependencies:
     "@babel/core" "^7.16.0"
     "@babel/plugin-syntax-decorators" "^7.16.0"
@@ -5788,7 +5788,7 @@ fabscale-eslint-config@~1.1.1:
     eslint-plugin-node "^11.1.0"
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-qunit "^7.0.0"
-    eslint-plugin-unused-imports "^1.1.5"
+    eslint-plugin-unused-imports "^2.0.0"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
